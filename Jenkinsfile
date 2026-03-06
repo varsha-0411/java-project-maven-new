@@ -33,7 +33,8 @@ pipeline {
 		}
 		stage ('run') {
 		    steps {
-			    sh 'docker run -itd --name vacont -p 9090:8080 img211'
+				sh 'docker rm -f vacont || true' 			    
+				sh 'docker run -itd --name vacont -p 9090:8080 img211'
 			}
 		}
         
